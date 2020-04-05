@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>Whitelist Generator - Parent</name>
-    <description></description>
+    <description>A tool to generate a report containing all whitelisted dependencies across a multi-module maven project</description>
     <url>https://github.com/JonathanGiles/whitelistgenerator</url>
 
     <distributionManagement>
