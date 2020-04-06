@@ -2,3 +2,4 @@
 /.idea/
 /report2.json
 /test-mojo.xml
+*.versionsBackup

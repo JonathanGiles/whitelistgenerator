@@ -41,12 +41,12 @@ public class Main {
 
     private Reporter reporter;
 
-    public void setBaseDir(String baseDir) {
-        this.baseDir = Paths.get(baseDir);
+    public void setBaseDir(Path baseDir) {
+        this.baseDir = baseDir;
     }
 
-    public void setReportFile(String reportFile) {
-        this.reportFile = Paths.get(reportFile);
+    public void setReportFile(Path reportFile) {
+        this.reportFile = reportFile;
     }
 
     public void addIgnoredMavenGA(String ga) {
