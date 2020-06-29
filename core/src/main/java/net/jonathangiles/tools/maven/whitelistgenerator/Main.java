@@ -24,12 +24,14 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
     private Path baseDir;
     private Path reportFile;
+    private Consumer<String> logCallback;
 
     private DocumentBuilder builder;
     private XPath xpath;
@@ -46,6 +48,10 @@ public class Main {
 
     public void setReportFile(Path reportFile) {
         this.reportFile = reportFile;
+    }
+
+    public void setLogCallback(Consumer<String> callback) {
+        this.logCallback = callback;
     }
 
     public void addIgnoredMavenGA(String ga) {
@@ -65,7 +71,7 @@ public class Main {
 
             xpath = XPathFactory.newInstance().newXPath();
             isMavenProjectExpression = xpath.compile("/project");
-            bannedDepsWhiteListExpression = xpath.compile("/project/build/plugins/plugin/executions/execution/configuration/rules/bannedDependencies/includes/include");
+            bannedDepsWhiteListExpression = xpath.compile("//configuration/rules/bannedDependencies/includes/include");
         } catch (ParserConfigurationException | XPathExpressionException e) {
             e.printStackTrace();
         }
@@ -85,6 +91,14 @@ public class Main {
             reporter.report(result, reportFile);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void log(String msg) {
+        if (logCallback == null) {
+            System.out.println(msg);
+        } else {
+            logCallback.accept(msg);
         }
     }
 

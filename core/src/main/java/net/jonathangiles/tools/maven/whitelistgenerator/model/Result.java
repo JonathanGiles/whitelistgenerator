@@ -11,7 +11,7 @@ import java.util.TreeSet;
 public class Result {
 
     @Expose
-    private final Set<String> fullWhitelist;
+    private final Set<String> fullAllowList;
 
     @Expose
     @SerializedName("parsedDocuments")
@@ -19,7 +19,7 @@ public class Result {
 
     public Result(List<ParsedDocument> parsedDocuments) {
         this.parsedDocuments = new ArrayList<>();
-        this.fullWhitelist = new TreeSet<>();
+        this.fullAllowList = new TreeSet<>();
 
         for (ParsedDocument pd : parsedDocuments) {
             addParsedDocument(pd);
@@ -28,7 +28,7 @@ public class Result {
 
     public void addParsedDocument(ParsedDocument parsedDocument) {
         this.parsedDocuments.add(parsedDocument);
-        this.fullWhitelist.addAll(parsedDocument.getWhitelistedDeps());
+        this.fullAllowList.addAll(parsedDocument.getAllowListDeps());
     }
 
     public List<ParsedDocument> getParsedDocuments() {

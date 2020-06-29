@@ -32,6 +32,7 @@ public class WhitelistMojo extends AbstractMojo {
         Main main = new Main();
         main.setBaseDir(baseDir.toPath());
         main.setReportFile(reportFile.toPath());
+        main.setLogCallback(msg -> getLog().info(msg));
 
         if (ignoredGA != null) {
             for (String ga : ignoredGA) {

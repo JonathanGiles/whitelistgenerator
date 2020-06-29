@@ -16,7 +16,7 @@ public class PlainTextReport implements Reporter {
         result.getParsedDocuments().forEach(parsedDocument -> {
             System.out.print(parsedDocument.getGroupId() + ":" + parsedDocument.getArtifactId() + ":" + parsedDocument.getVersion());
             System.out.println(" (located at " + parsedDocument.getPath() + ") has whitelisted the following dependencies:");
-            parsedDocument.getWhitelistedDeps().stream().forEach(val -> System.out.println("  - " + val));
+            parsedDocument.getAllowListDeps().stream().forEach(val -> System.out.println("  - " + val));
         });
     }
 }

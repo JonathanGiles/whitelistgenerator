@@ -1,6 +1,6 @@
-# Maven Enforcer Whitelist Report Tool
+# Maven Enforcer Allow List Report Tool
 
-This application (and Maven plugin) will generate a report detailing all whitelisted dependencies.
+This application (and Maven plugin) will generate a report detailing all allowed dependencies.
 
 It can be configured within a Maven project as such:
 
@@ -8,7 +8,7 @@ It can be configured within a Maven project as such:
 <plugin>
     <groupId>net.jonathangiles.tools</groupId>
     <artifactId>whitelistgenerator-maven-plugin</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <configuration>
         <!-- baseDir can be absolute, or relative to the pom file (if there is no leading '/' or drive letter) -->
         <baseDir>/directory/to/scan/in</baseDir>
@@ -31,7 +31,7 @@ The default report output is in JSON, and it takes the following form:
 
 ```json
 {
-  "fullWhitelist": [
+  "fullAllowList": [
     "com.azure:*",
     "com.fasterxml.jackson.core:jackson-annotations",
     "com.fasterxml.jackson.core:jackson-core",
@@ -68,7 +68,7 @@ The default report output is in JSON, and it takes the following form:
       "artifactId": "azure-core-http-netty",
       "version": "1.5.0-beta.1",
       "path": "core/azure-core-http-netty/pom.xml",
-      "whitelist": [
+      "allowList": [
         "com.azure:*",
         "io.projectreactor.netty",
         "io.netty:netty-buffer",
@@ -85,7 +85,7 @@ The default report output is in JSON, and it takes the following form:
       "artifactId": "azure-core-amqp",
       "version": "1.1.0-beta.1",
       "path": "core/azure-core-amqp/pom.xml",
-      "whitelist": [
+      "allowList": [
         "com.azure:*",
         "org.apache.qpid:proton-j",
         "com.microsoft.azure:qpid-proton-j-extensions"
@@ -96,7 +96,7 @@ The default report output is in JSON, and it takes the following form:
       "artifactId": "azure-core",
       "version": "1.4.0-beta.1",
       "path": "core/azure-core/pom.xml",
-      "whitelist": [
+      "allowList": [
         "org.slf4j:slf4j-api",
         "io.projectreactor:reactor-core",
         "io.netty:netty-tcnative-boringssl-static",
@@ -110,7 +110,7 @@ The default report output is in JSON, and it takes the following form:
       "artifactId": "azure-core-tracing-opentelemetry",
       "version": "1.0.0-beta.4",
       "path": "core/azure-core-tracing-opentelemetry/pom.xml",
-      "whitelist": [
+      "allowList": [
         "com.azure:*",
         "io.opentelemetry"
       ]
@@ -120,7 +120,7 @@ The default report output is in JSON, and it takes the following form:
       "artifactId": "azure-core-http-okhttp",
       "version": "1.3.0-beta.1",
       "path": "core/azure-core-http-okhttp/pom.xml",
-      "whitelist": [
+      "allowList": [
         "com.azure:*",
         "com.squareup.okhttp3:okhttp"
       ]
@@ -130,7 +130,7 @@ The default report output is in JSON, and it takes the following form:
       "artifactId": "azure-identity",
       "version": "1.1.0-beta.3",
       "path": "identity/azure-identity/pom.xml",
-      "whitelist": [
+      "allowList": [
         "com.azure:*",
         "com.nimbusds:oauth2-oidc-sdk",
         "com.microsoft.azure:msal4j",
@@ -143,7 +143,7 @@ The default report output is in JSON, and it takes the following form:
       "artifactId": "azure-cosmos",
       "version": "4.0.1-beta.2",
       "path": "cosmos/azure-cosmos/pom.xml",
-      "whitelist": [
+      "allowList": [
         "com.azure:*",
         "org.slf4j:slf4j-api",
         "io.projectreactor:reactor-core",

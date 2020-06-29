@@ -24,8 +24,8 @@ public class ParsedDocument {
     private final String path;
 
     @Expose
-    @SerializedName("whitelist")
-    private List<String> whitelistedDeps;
+    @SerializedName("allowList")
+    private List<String> allowListDeps;
 
     public ParsedDocument(final Document document, final Path path) {
         this.document = document;
@@ -33,10 +33,10 @@ public class ParsedDocument {
     }
 
     public void addWhiteListedDep(String value) {
-        if (whitelistedDeps == null) {
-            this.whitelistedDeps = new ArrayList<>();
+        if (allowListDeps == null) {
+            this.allowListDeps = new ArrayList<>();
         }
-        whitelistedDeps.add(value);
+        allowListDeps.add(value);
     }
 
     public void setMavenGAV(String groupId, String artifactId, String version) {
@@ -53,8 +53,8 @@ public class ParsedDocument {
         return path;
     }
 
-    public List<String> getWhitelistedDeps() {
-        return whitelistedDeps;
+    public List<String> getAllowListDeps() {
+        return allowListDeps;
     }
 
     public String getGroupId() {
