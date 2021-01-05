@@ -7,12 +7,12 @@
     <parent>
         <groupId>net.jonathangiles.tools</groupId>
         <artifactId>whitelistgenerator-parent</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
     </parent>
 
     <groupId>net.jonathangiles.tools</groupId>
     <artifactId>whitelistgenerator-core</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <name>Whitelist Generator - Core</name>
     <description>A tool to generate a report containing all whitelisted dependencies across a multi-module maven project</description>
