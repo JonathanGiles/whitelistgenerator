@@ -8,7 +8,7 @@ It can be configured within a Maven project as such:
 <plugin>
     <groupId>net.jonathangiles.tools</groupId>
     <artifactId>whitelistgenerator-maven-plugin</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.4</version>
     <configuration>
         <!-- baseDir can be absolute, or relative to the pom file (if there is no leading '/' or drive letter) -->
         <baseDir>/directory/to/scan/in</baseDir>
